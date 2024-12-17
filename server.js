@@ -1,16 +1,13 @@
 const express = require('express');
 const app = express();
+
+// Sử dụng cổng từ môi trường hoặc mặc định là 3000
 const PORT = process.env.PORT || 3000;
 
-// Middleware để phục vụ file tĩnh (public)
-app.use(express.static('public'));
-
-// Route chính
 app.get('/', (req, res) => {
-    res.send('<h1>Chào mừng bạn đến với ứng dụng Node.js trên Render!</h1>');
+    res.send('<h1>Ứng dụng Node.js đang chạy thành công!</h1>');
 });
 
-// Start server
 app.listen(PORT, () => {
     console.log(`Server đang chạy trên cổng ${PORT}`);
 });
